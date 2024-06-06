@@ -39,6 +39,9 @@ void WordEditor::init()
 
     setCurFileName(QString());
 
+
+    m_dialog = new FindReplaceDialog(ui->textEdit,this);
+
     this->statusBar()->showMessage("准备就绪",3000);
 
     connect(ui->textEdit->document(),&QTextDocument::contentsChanged,this,&WordEditor::documentWasModified);
@@ -348,6 +351,9 @@ void WordEditor::on_edit_menu_triggered(QAction *action)
         break;
     case ActionType::Redo:
         ui->textEdit->redo();
+        break;
+    case ActionType::FindAndRePlace:
+        m_dialog->show();
         break;
     default:
         break;

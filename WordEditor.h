@@ -1,12 +1,14 @@
 #ifndef WORDEDITOR_H
 #define WORDEDITOR_H
 
+#include "findreplacedialog.h"
 #include <QMainWindow>
 
 class QToolButton;
 class QComboBox;
 class QGraphicsColorizeEffect;
 class QFontComboBox;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -82,5 +84,6 @@ private:
     QComboBox* m_fontSize_cbx;
     QFontComboBox* m_fontFamily_cbx;
     QGraphicsColorizeEffect* m_colorEffect;
+    FindReplaceDialog* m_dialog;
 };
 #endif // WORDEDITOR_H
